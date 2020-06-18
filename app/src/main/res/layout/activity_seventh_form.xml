@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#220132"
+    tools:context=".seventhForm">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/temaFiveZagolovok1"
+                    android:layout_width="370dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/temaFiveZagolovok1"
+                    android:textColor="#FDEAA8"
+                    android:textSize="27dp"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:layout_marginTop="15dp" />
+
+                <TextView
+                    android:id="@+id/tema5text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tema5text1"
+                    android:layout_marginTop="15dp"
+                    android:layout_gravity="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="17dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:id="@+id/temaFiveZagolovok2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/temaFiveZagolovok2"
+                    android:textColor="#FDEAA8"
+                    android:textSize="27dp"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:layout_marginTop="15dp"  />
+
+                <TextView
+                    android:id="@+id/tema5text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tema5text2"
+                    android:layout_marginTop="15dp"
+                    android:layout_gravity="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="17dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:id="@+id/temaFiveZagolovok3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/temaFiveZagolovok3"
+                    android:textColor="#FFFFFF"
+                    android:textSize="27dp"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:layout_marginTop="15dp" />
+
+                <TextView
+                    android:id="@+id/tema5text3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tema5text3"
+                    android:layout_marginTop="15dp"
+                    android:layout_gravity="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="17dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <ImageView
+                    android:id="@+id/lifecycle"
+                    android:layout_marginTop="45dp"
+                    android:layout_gravity="center"
+                    android:layout_width="340dp"
+                    android:layout_height="283dp"
+                    app:srcCompat="@drawable/lifecycle" />
+
+                <TextView
+                    android:id="@+id/temaFiveZagolovok4"
+                    android:layout_width="370dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/temaFiveZagolovok4"
+                    android:textColor="#FDEAA8"
+                    android:textSize="27dp"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:layout_marginTop="35dp" />
+
+                <TextView
+                    android:id="@+id/tema5text4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tema5text4"
+                    android:layout_marginTop="15dp"
+                    android:layout_gravity="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="17dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <ImageView
+                    android:id="@+id/testcaseview"
+                    android:layout_marginTop="15dp"
+                    android:layout_gravity="center"
+                    android:layout_width="360dp"
+                    android:layout_height="260dp"
+                    app:srcCompat="@drawable/testcaseview" />
+
+                <TextView
+                    android:id="@+id/tema5text5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tema5text5"
+                    android:layout_marginTop="15dp"
+                    android:layout_gravity="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="17dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:id="@+id/temaFiveZagolovok5"
+                    android:layout_width="370dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/temaFiveZagolovok5"
+                    android:textColor="#FDEAA8"
+                    android:textSize="27dp"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:layout_marginTop="35dp"  />
+
+                <TextView
+                    android:id="@+id/tema5text6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tema5text6"
+                    android:layout_marginTop="15dp"
+                    android:layout_gravity="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="17dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:id="@+id/temaFiveZagolovok6"
+                    android:layout_width="370dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/temaFiveZagolovok6"
+                    android:textColor="#FDEAA8"
+                    android:textSize="27dp"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:layout_marginTop="35dp"/>
+
+                <TextView
+                    android:id="@+id/tema5text7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tema5text7"
+                    android:layout_marginTop="15dp"
+                    android:layout_gravity="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="17dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <Button
+                    android:id="@+id/exitToMenu5"
+                    android:layout_width="280dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/buttonshape2"
+                    android:shadowColor="#A8A8A8"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="5"
+                    android:text="Выход в главное меню"
+                    android:textColor="#455a64"
+                    android:textSize="18sp"  />
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

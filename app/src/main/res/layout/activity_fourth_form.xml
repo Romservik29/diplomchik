@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#220132"
+    tools:context=".fourthForm">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/temaTwoZagolovok1"
+                    android:layout_width="355dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/temaTwoZagolovok1"
+                    android:textColor="#FDEAA8"
+                    android:textSize="26dp"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:layout_marginTop="15dp"/>
+
+                <TextView
+                    android:id="@+id/tema2text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tema2text1"
+                    android:layout_marginTop="15dp"
+                    android:layout_gravity="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="17dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp" />
+
+                <TextView
+                    android:id="@+id/trebram"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/trebram"
+                    android:background="@drawable/polosaleft"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"
+                    android:textColor="#08FF00"
+                    android:textSize="17dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="25dp" />
+
+                <TextView
+                    android:id="@+id/aftertrebram"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/aftertrebram"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="17dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp" />
+
+                <ImageView
+                    android:id="@+id/costerror"
+                    android:layout_width="339dp"
+                    android:layout_height="198dp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/costerror"
+                    android:background="@drawable/style_pict"
+                    />
+
+                <TextView
+                    android:id="@+id/tema2text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tema2text2"
+                    android:layout_marginTop="15dp"
+                    android:layout_gravity="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="17dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:id="@+id/browncolor1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bluecolor1"
+                    android:layout_marginTop="0dp"
+                    android:layout_gravity="center"
+                    android:textColor="#FFA000"
+                    android:textSize="17dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp" />
+
+                <TextView
+                    android:id="@+id/afterbrown1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/afterblue1"
+                    android:layout_marginTop="0dp"
+                    android:layout_gravity="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="17dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp" />
+
+                <TextView
+                    android:id="@+id/browncolor2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/browncolor2"
+                    android:layout_marginTop="0dp"
+                    android:layout_gravity="center"
+                    android:textColor="#FFA000"
+                    android:textSize="17dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp" />
+
+                <TextView
+                    android:id="@+id/temaTwoZagolovok2"
+                    android:layout_width="370dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/temaTwoZagolovok2"
+                    android:textColor="#FDEAA8"
+                    android:textSize="27dp"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:layout_marginTop="15dp" />
+
+                <TextView
+                    android:id="@+id/tema2text3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tema2text3"
+                    android:layout_marginTop="15dp"
+                    android:layout_gravity="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="17dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <ImageView
+                    android:id="@+id/maintech"
+                    android:layout_width="340dp"
+                    android:layout_height="168dp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/maintech"
+                    android:background="@drawable/style_pict"/>
+
+                <TextView
+                    android:id="@+id/temaTwoZagolovok3"
+                    android:layout_width="370dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/temaTwoZagolovok3"
+                    android:textColor="#FDEAA8"
+                    android:textSize="27dp"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:layout_marginTop="15dp" />
+
+                <TextView
+                    android:id="@+id/tema2text4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tema2text4"
+                    android:layout_marginTop="15dp"
+                    android:layout_gravity="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="17dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <ImageView
+                    android:id="@+id/typestreb"
+                    android:layout_width="340dp"
+                    android:layout_height="195dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/style_pict"
+                    app:srcCompat="@drawable/typestreb" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/exitToMenu2"
+                        android:layout_width="160dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/buttonshape2"
+                        android:shadowColor="#A8A8A8"
+                        android:shadowDx="0"
+                        android:shadowDy="0"
+                        android:shadowRadius="5"
+                        android:text="Выход в меню"
+                        android:textColor="#455a64"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginLeft="15dp"/>
+
+                    <Button
+                        android:id="@+id/transition2"
+                        android:layout_width="160dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/buttonshape2"
+                        android:shadowColor="#A8A8A8"
+                        android:shadowDx="0"
+                        android:shadowDy="0"
+                        android:shadowRadius="5"
+                        android:text="Перейти к тесту"
+                        android:textColor="#455a64"
+                        android:textSize="14sp"
+                        android:layout_marginLeft="10dp"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
