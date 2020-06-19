@@ -1,15 +1,31 @@
 package com.example.diplomchik;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class testsMain extends AppCompatActivity {
     private RadioGroup rdgrp1;
@@ -32,6 +48,12 @@ public class testsMain extends AppCompatActivity {
     private Button btn_check5;
     private TextView test1otvet5;
     private Button exitToMenu8;
+    public String[] answers;
+    private  static  final  String TAG = "testsMain";
+
+    private  FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private DocumentReference answersRef = db.document("/answers/test1");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -181,6 +203,29 @@ public class testsMain extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                                     answersRef.get()
+                                             .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                                                 @Override
+                                                 public void onSuccess(DocumentSnapshot documentSnapshot) {
+                                                           if(documentSnapshot.exists()){
+                                                                 HashMap correctAnswers = (HashMap) documentSnapshot.get("answers");
+                                                                 String answer = documentSnapshot.getString("answer1");
+                                                                   result_test.setText("Ответ:"+answer+"get");
+
+                                                           }else{
+                                                               Toast.makeText(testsMain.this,"Документа нет",Toast.LENGTH_SHORT).show();
+
+                                                           }
+                                                 }
+                                             })
+                                             .addOnFailureListener(new OnFailureListener() {
+                                                 @Override
+                                                 public void onFailure(@NonNull Exception e) {
+                                                 Toast.makeText(testsMain.this,"Документа нет",Toast.LENGTH_SHORT).show();
+                                                 }
+                                             });
+
+
                         final int checkedRadioButtonId = rdgrp3.getCheckedRadioButtonId();
                         RadioButton selectedBtn = (RadioButton) findViewById(checkedRadioButtonId);
                         String radioButtonValue = selectedBtn.getText().toString();
@@ -201,7 +246,7 @@ public class testsMain extends AppCompatActivity {
                         }
                         counter.incCounter(integratedCounter);
                         System.out.println("Value: " + counter.getCounter());
-                        result_test.setText("Количство правильных ответов из 5: " + counter.getCounter());
+                        //result_test.setText("Количство правильных ответов из 5: " + counter.getCounter());
 
                     }
                 }
