@@ -1,6 +1,7 @@
 package com.example.diplomchik;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -24,8 +25,13 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import java.util.HashMap;
-import java.util.Map;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+
 
 public class testsMain extends AppCompatActivity {
     private RadioGroup rdgrp1;
@@ -48,7 +54,7 @@ public class testsMain extends AppCompatActivity {
     private Button btn_check5;
     private TextView test1otvet5;
     private Button exitToMenu8;
-    public String[] answers;
+    public ArrayList answers = new ArrayList();
     private  static  final  String TAG = "testsMain";
 
     private  FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -101,13 +107,8 @@ public class testsMain extends AppCompatActivity {
                         final int checkedRadioButtonId = rdgrp1.getCheckedRadioButtonId();
                         RadioButton selectedBtn = (RadioButton) findViewById(checkedRadioButtonId);
                         String radioButtonValue = selectedBtn.getText().toString();
-                        if (radioButtonValue == "Структура") {
-                                integratedCounter++;
-                                disableRadioGroup(rdgrp1);
-                            }
-                        else {
-                                disableRadioGroup(rdgrp1);
-                            }
+                        disableRadioGroup(rdgrp1);
+                        answers.add(radioButtonValue);
                         }
 
                     }
@@ -122,23 +123,10 @@ public class testsMain extends AppCompatActivity {
                         final int checkedRadioButtonId = rdgrp4.getCheckedRadioButtonId();
                         RadioButton selectedBtn = (RadioButton) findViewById(checkedRadioButtonId);
                         String radioButtonValue = selectedBtn.getText().toString();
-                        switch (radioButtonValue) {
-                            case "Итерационная инкрементальная": {
-                                test1otvet4.setText("Ответ верный");
-                                test1otvet4.setTextColor(Color.parseColor("#08FF00"));
-                                integratedCounter++;
-                                disableRadioGroup(rdgrp4);
-                                break;
-                            }
-                            default: {
-                                test1otvet4.setText("Ответ неверный");
-                                test1otvet4.setTextColor(Color.parseColor("#FF0000"));
-                                disableRadioGroup(rdgrp4);
-                                break;
-                            }
-                        }
-
-                    }
+                        disableRadioGroup(rdgrp4);
+                        answers.add(radioButtonValue);
+                        Toast.makeText(testsMain.this, (String)answers.get(1)  ,Toast.LENGTH_SHORT).show();
+                     }
                 }
         );
     }
@@ -150,22 +138,8 @@ public class testsMain extends AppCompatActivity {
                         final int checkedRadioButtonId = rdgrp5.getCheckedRadioButtonId();
                         RadioButton selectedBtn = (RadioButton) findViewById(checkedRadioButtonId);
                         String radioButtonValue = selectedBtn.getText().toString();
-                        switch (radioButtonValue) {
-                            case "Многократное": {
-                                test1otvet5.setText("Ответ верный");
-                                test1otvet5.setTextColor(Color.parseColor("#08FF00"));
-                                integratedCounter++;
-                                disableRadioGroup(rdgrp5);
-                                break;
-                            }
-                            default: {
-                                test1otvet5.setText("Ответ неверный");
-                                test1otvet5.setTextColor(Color.parseColor("#FF0000"));
-                                disableRadioGroup(rdgrp5);
-                                break;
-                            }
-                        }
-
+                        disableRadioGroup(rdgrp5);     
+                        answers.add(radioButtonValue);
                     }
                 }
         );
@@ -178,21 +152,9 @@ public class testsMain extends AppCompatActivity {
                         final int checkedRadioButtonId = rdgrp2.getCheckedRadioButtonId();
                         RadioButton selectedBtn = (RadioButton) findViewById(checkedRadioButtonId);
                         String radioButtonValue = selectedBtn.getText().toString();
-                        switch (radioButtonValue) {
-                            case "Гибкая": {
-                                test1otvet2.setText("Ответ верный");
-                                test1otvet2.setTextColor(Color.parseColor("#08FF00"));
-                                integratedCounter++;
-                                disableRadioGroup(rdgrp2);
-                                break;
-                            }
-                            default: {
-                                test1otvet2.setText("Ответ неверный");
-                                test1otvet2.setTextColor(Color.parseColor("#FF0000"));
-                                disableRadioGroup(rdgrp2);
-                                break;
-                            }
-                        }
+                        answers.add(radioButtonValue);
+                        Toast.makeText(testsMain.this, (String)answers.get(3)  ,Toast.LENGTH_SHORT).show();
+                        disableRadioGroup(rdgrp2);
                     }
                 }
         );
@@ -203,51 +165,33 @@ public class testsMain extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                                     answersRef.get()
-                                             .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                                                 @Override
-                                                 public void onSuccess(DocumentSnapshot documentSnapshot) {
-                                                           if(documentSnapshot.exists()){
-                                                                 HashMap correctAnswers = (HashMap) documentSnapshot.get("answers");
-                                                                 String answer = documentSnapshot.getString("answer1");
-                                                                   result_test.setText("Ответ:"+answer+"get");
-
-                                                           }else{
-                                                               Toast.makeText(testsMain.this,"Документа нет",Toast.LENGTH_SHORT).show();
-
-                                                           }
-                                                 }
-                                             })
-                                             .addOnFailureListener(new OnFailureListener() {
-                                                 @Override
-                                                 public void onFailure(@NonNull Exception e) {
-                                                 Toast.makeText(testsMain.this,"Документа нет",Toast.LENGTH_SHORT).show();
-                                                 }
-                                             });
-
-
                         final int checkedRadioButtonId = rdgrp3.getCheckedRadioButtonId();
                         RadioButton selectedBtn = (RadioButton) findViewById(checkedRadioButtonId);
                         String radioButtonValue = selectedBtn.getText().toString();
-                        switch (radioButtonValue) {
-                            case "V-образная": {
-                                test1otvet3.setText("Ответ верный");
-                                test1otvet3.setTextColor(Color.parseColor("#08FF00"));
-                                integratedCounter++;
-                                disableRadioGroup(rdgrp3);
-                                break;
-                            }
-                            default: {
-                                test1otvet3.setText("Ответ неверный");
-                                test1otvet3.setTextColor(Color.parseColor("#FF0000"));
-                                disableRadioGroup(rdgrp3);
-                                break;
-                            }
-                        }
-                        counter.incCounter(integratedCounter);
-                        System.out.println("Value: " + counter.getCounter());
-                        //result_test.setText("Количство правильных ответов из 5: " + counter.getCounter());
+                        answers.add(radioButtonValue);
+                        disableRadioGroup(rdgrp3);
 
+                        answersRef.get()
+                        .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                  DocumentSnapshot document = task.getResult();
+                                  int countCorrectAnswers = 0;
+                                  List<String> group = (List<String>) document.get("answers");
+                                  for(int i =0;i<5;i++){
+                                      String a =  group.get(i);
+                                      String b = (String) answers.get(i);
+                                      if(a.equals(b)) {countCorrectAnswers++;};
+                                  }
+                                Toast.makeText(testsMain.this, ""+countCorrectAnswers  ,Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(testsMain.this, "Что-то пошло не так!"  ,Toast.LENGTH_SHORT).show();
+                            }
+                        });    
                     }
                 }
         );
